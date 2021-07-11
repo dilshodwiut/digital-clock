@@ -1,0 +1,178 @@
+@import url("https://fonts.googleapis.com/css2?family=Manjari:wght@700&display=swap");
+
+:root {
+  --bg-color: rgb(13, 17, 23);
+  --time-color: #44d62c;
+  --ticking-color: #d22730;
+  --border-color: #ffad00;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  font-family: Manjari, "Courier New", Courier, monospace;
+  background-color: var(--bg-color);
+  color: var(--time-color);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animated-border,
+.border {
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  width: 15rem;
+  height: 15rem;
+  border: 0.5rem solid var(--border-color);
+  border-radius: 50%;
+}
+
+.animated-border {
+  animation: enlarge 1.5s ease-out infinite;
+  position: absolute;
+}
+
+.time {
+  display: flex;
+  justify-content: space-around;
+  font-family: Clock, monospace;
+  font-size: 4rem;
+  margin-top: 3rem;
+}
+
+#semicolon {
+  animation: fade 1.5s ease-out infinite;
+  color: var(--ticking-color);
+}
+
+.date {
+  font-size: 1rem;
+}
+
+#curvedDate {
+  display: block;
+  width: 12rem;
+  height: 3rem;
+  position: relative;
+}
+
+#curvedDate > span[class^="l"]:nth-of-type(n + 0) {
+  display: block;
+  position: absolute;
+  transform-origin: 50% 100%;
+}
+
+#curvedDate .l0 {
+  transform: rotate(0.7rad);
+  left: 15px;
+  top: 15px;
+}
+
+#curvedDate .l1 {
+  transform: rotate(0.65rad);
+  left: 26px;
+  top: 23px;
+}
+
+#curvedDate .l2 {
+  transform: rotate(0.6rad);
+  left: 35px;
+  top: 30px;
+}
+
+#curvedDate .l3 {
+  transform: rotate(0.45rad);
+  left: 51px;
+  top: 40.5px;
+}
+
+#curvedDate .l4 {
+  transform: rotate(0.4rad);
+  left: 62px;
+  top: 45px;
+}
+
+#curvedDate .l5 {
+  transform: rotate(0.3rad);
+  left: 74px;
+  top: 49px;
+}
+
+#curvedDate .l6 {
+  transform: rotate(-0.1rad);
+  right: 80px;
+  top: 50px;
+}
+
+#curvedDate .l7 {
+  transform: rotate(-0.2rad);
+  right: 66px;
+  top: 48px;
+}
+
+#curvedDate .l8 {
+  transform: rotate(-0.4rad);
+  right: 45px;
+  top: 38px;
+}
+
+#curvedDate .l9 {
+  transform: rotate(-0.5rad);
+  right: 33px;
+  top: 31px;
+}
+
+#curvedDate .l10 {
+  transform: rotate(-0.6rad);
+  right: 23px;
+  top: 24px;
+}
+
+#curvedDate .l11 {
+  transform: rotate(-0.7rad);
+  right: 15px;
+  top: 15px;
+}
+
+@keyframes fade {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes enlarge {
+  from {
+    border-color: var(--border-color);
+  }
+  to {
+    width: 20rem;
+    height: 20rem;
+    border-color: var(--bg-color);
+  }
+}
+
+@font-face {
+  font-family: Clock;
+  src: url(Orloj-font.otf);
+}
