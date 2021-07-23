@@ -39,9 +39,17 @@ const updateTime = () => {
   let currentDate = date.toDateString();
 
   // adding letters to the curved date
-  const letters = currentDate.split("").filter((letter) => letter != " ");
-  curvedDate.innerHTML = "";
-  letters.forEach((letter, index) => {
-    curvedDate.innerHTML += `<span class="l${index}">${letter}</span>`;
-  });
+  // const letters = currentDate.split("").filter((letter) => letter != " ");
+  // curvedDate.innerHTML = "";
+  // letters.forEach((letter, index) => {
+  //   curvedDate.innerHTML += `<span class="l${index}">${letter}</span>`;
+  // });
+
+  curvedDate.textContent = currentDate;
+
+  // Instantiate `CircleType` with an HTML element.
+  const circleType = new CircleType(curvedDate);
+
+  // Set the text radius and direction. Note: setter methods are chainable.
+  circleType.radius(105).dir(-1); // 95
 };

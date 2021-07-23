@@ -40,7 +40,7 @@ body {
   align-items: center;
   width: 15rem;
   height: 15rem;
-  border: 0.5rem solid var(--border-color);
+  border: 0.5rem solid var(--ticking-color);
   border-radius: 50%;
 }
 
@@ -49,12 +49,15 @@ body {
   position: absolute;
 }
 
+.border {
+  position: relative;
+}
+
 .time {
   display: flex;
   justify-content: space-around;
   font-family: Clock, monospace;
   font-size: 4rem;
-  margin-top: 3rem;
 }
 
 #semicolon {
@@ -63,17 +66,18 @@ body {
 }
 
 .date {
-  font-size: 1rem;
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 10%; /* 3 */
 }
 
 #curvedDate {
   display: block;
   width: 12rem;
-  height: 3rem;
-  position: relative;
+  height: 2rem;
 }
 
-#curvedDate > span[class^="l"]:nth-of-type(n + 0) {
+/* #curvedDate > span[class^="l"]:nth-of-type(n + 0) {
   display: block;
   position: absolute;
   transform-origin: 50% 100%;
@@ -149,7 +153,7 @@ body {
   transform: rotate(-0.7rad);
   right: 15px;
   top: 15px;
-}
+} */
 
 @keyframes fade {
   0%,
@@ -163,7 +167,7 @@ body {
 
 @keyframes enlarge {
   from {
-    border-color: var(--border-color);
+    border-color: var(--time-color);
   }
   to {
     width: 20rem;
