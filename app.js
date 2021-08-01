@@ -51,5 +51,5 @@ const updateTime = () => {
   const circleType = new CircleType(curvedDate);
 
   // Set the text radius and direction. Note: setter methods are chainable.
-  circleType.radius(105).dir(-1); // 95
+  circleType.radius(115).dir(-1); // 95
 };
